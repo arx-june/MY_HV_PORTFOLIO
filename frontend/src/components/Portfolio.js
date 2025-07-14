@@ -315,7 +315,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
                 Education
               </h2>
               <div className="space-y-6">
