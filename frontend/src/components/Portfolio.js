@@ -220,7 +220,7 @@ const Portfolio = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
           >
-            <ChevronDown className="w-8 h-8 mx-auto text-purple-400" />
+            <ChevronDown className="w-8 h-8 mx-auto text-teal-400" />
           </motion.div>
         </div>
       </section>
