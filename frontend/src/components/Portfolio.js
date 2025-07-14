@@ -509,7 +509,7 @@ const ExperienceCard = ({ experience, index }) => {
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.4, delay: (index * 0.1) + (respIndex * 0.1) + 0.3 }}
           >
-            <Zap className="w-4 h-4 text-purple-400 mt-1 flex-shrink-0" />
+            <Zap className="w-4 h-4 text-teal-400 mt-1 flex-shrink-0" />
             <p className="text-gray-300">{resp}</p>
           </motion.div>
         ))}
