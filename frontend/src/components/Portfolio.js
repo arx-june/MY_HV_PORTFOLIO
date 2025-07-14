@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Github, Mail, Phone, MapPin, Calendar, Award, Code, Database, Brain, Cloud, Zap, Book, Trophy, ExternalLink } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { portfolioData } from '../data/mockData';
 
 const Portfolio = () => {
