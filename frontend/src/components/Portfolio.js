@@ -320,10 +320,10 @@ const Portfolio = () => {
               </h2>
               <div className="space-y-6">
                 {portfolioData.education.map((edu, index) => (
-                  <div key={index} className="bg-purple-900/20 p-6 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
-                    <h3 className="text-xl font-bold text-purple-300 mb-2">{edu.institution}</h3>
+                  <div key={index} className="bg-teal-900/20 p-6 rounded-xl border border-teal-500/20 hover:border-teal-500/40 transition-all duration-300">
+                    <h3 className="text-xl font-bold text-teal-300 mb-2">{edu.institution}</h3>
                     <p className="text-lg text-white mb-2">{edu.degree}</p>
-                    <p className="text-purple-400 mb-2">{edu.cgpa || edu.percentage}</p>
+                    <p className="text-teal-400 mb-2">{edu.cgpa || edu.percentage}</p>
                     <div className="flex items-center gap-4 text-gray-400">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-4 h-4" />
