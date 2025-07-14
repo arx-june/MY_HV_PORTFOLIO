@@ -50,7 +50,7 @@ const Portfolio = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900 text-white overflow-x-hidden">
       {/* Navigation */}
       <motion.nav 
         className="fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-lg z-50 border-b border-purple-500/20"
