@@ -304,7 +304,7 @@ const Portfolio = () => {
           
           <div className="space-y-8">
             {portfolioData.publications.map((pub, index) => (
-              <PublicationCard key={index} publication={pub} />
+              <PublicationCard key={index} publication={pub} index={index} />
             ))}
           </div>
         </div>
