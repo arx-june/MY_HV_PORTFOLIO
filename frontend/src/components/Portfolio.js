@@ -92,13 +92,50 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative px-4 pt-16">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse animation-delay-2000"></div>
+          <motion.div 
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+              x: [0, 100, 0],
+              y: [0, -50, 0]
+            }}
+            transition={{ 
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            style={{ y: y1 }}
+          />
+          <motion.div 
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            animate={{ 
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 180, 0],
+              x: [0, -100, 0],
+              y: [0, 50, 0]
+            }}
+            transition={{ 
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            style={{ y: y2 }}
+          />
         </div>
         
         <div className="relative z-10 text-center max-w-4xl mx-auto">
-          <div className="mb-8 relative">
-            <div className="w-48 h-48 mx-auto rounded-full border-4 border-purple-500 p-2 bg-gradient-to-r from-purple-600 to-pink-600 shadow-2xl shadow-purple-500/50">
+          <motion.div 
+            className="mb-8 relative"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.div 
+              className="w-48 h-48 mx-auto rounded-full border-4 border-purple-500 p-2 bg-gradient-to-r from-purple-600 to-pink-600 shadow-2xl shadow-purple-500/50"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
               {profileImage ? (
                 <img 
                   src={profileImage} 
@@ -110,8 +147,12 @@ const Portfolio = () => {
                   <span className="text-6xl font-bold text-white">HV</span>
                 </div>
               )}
-            </div>
-            <label className="absolute bottom-0 right-1/2 transform translate-x-1/2 translate-y-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full cursor-pointer transition-all duration-300 hover:scale-105">
+            </motion.div>
+            <motion.label 
+              className="absolute bottom-0 right-1/2 transform translate-x-1/2 translate-y-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full cursor-pointer transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <input
                 type="file"
                 accept="image/*"
@@ -119,37 +160,68 @@ const Portfolio = () => {
                 className="hidden"
               />
               Upload Photo
-            </label>
-          </div>
+            </motion.label>
+          </motion.div>
           
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
+          <motion.h1 
+            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             {portfolioData.personalInfo.name}
-          </h1>
-          <p className="text-2xl md:text-3xl mb-8 text-purple-300 font-light">
+          </motion.h1>
+          
+          <motion.p 
+            className="text-2xl md:text-3xl mb-8 text-purple-300 font-light"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             {portfolioData.personalInfo.title}
-          </p>
-          <p className="text-xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          </motion.p>
+          
+          <motion.p 
+            className="text-xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
             {portfolioData.personalInfo.summary}
-          </p>
+          </motion.p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <a href={`mailto:${portfolioData.personalInfo.email}`} className="flex items-center gap-2 bg-purple-600/20 hover:bg-purple-600/40 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105">
-              <Mail className="w-5 h-5" />
-              <span>{portfolioData.personalInfo.email}</span>
-            </a>
-            <a href={portfolioData.personalInfo.github} className="flex items-center gap-2 bg-purple-600/20 hover:bg-purple-600/40 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105">
-              <Github className="w-5 h-5" />
-              <span>GitHub</span>
-            </a>
-            <div className="flex items-center gap-2 bg-purple-600/20 px-6 py-3 rounded-full">
-              <Phone className="w-5 h-5" />
-              <span>{portfolioData.personalInfo.phone}</span>
-            </div>
-          </div>
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4 mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            {[
+              { href: `mailto:${portfolioData.personalInfo.email}`, icon: Mail, text: portfolioData.personalInfo.email },
+              { href: portfolioData.personalInfo.github, icon: Github, text: "GitHub" },
+              { href: `tel:${portfolioData.personalInfo.phone}`, icon: Phone, text: portfolioData.personalInfo.phone }
+            ].map((item, index) => (
+              <motion.a 
+                key={index}
+                href={item.href}
+                className="flex items-center gap-2 bg-purple-600/20 hover:bg-purple-600/40 px-6 py-3 rounded-full transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <item.icon className="w-5 h-5" />
+                <span>{item.text}</span>
+              </motion.a>
+            ))}
+          </motion.div>
           
-          <div className="animate-bounce">
+          <motion.div 
+            className="animate-bounce"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+          >
             <ChevronDown className="w-8 h-8 mx-auto text-purple-400" />
-          </div>
+          </motion.div>
         </div>
       </section>
 
