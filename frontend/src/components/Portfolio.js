@@ -132,7 +132,7 @@ const Portfolio = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.div 
-              className="w-48 h-48 mx-auto rounded-full border-4 border-purple-500 p-2 bg-gradient-to-r from-purple-600 to-pink-600 shadow-2xl shadow-purple-500/50"
+              className="w-48 h-48 mx-auto rounded-full border-4 border-teal-500 p-2 bg-gradient-to-r from-teal-600 to-cyan-600 shadow-2xl shadow-teal-500/50"
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
@@ -143,13 +143,13 @@ const Portfolio = () => {
                   className="w-full h-full rounded-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-teal-400 to-cyan-400 flex items-center justify-center">
                   <span className="text-6xl font-bold text-white">HV</span>
                 </div>
               )}
             </motion.div>
             <motion.label 
-              className="absolute bottom-0 right-1/2 transform translate-x-1/2 translate-y-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full cursor-pointer transition-all duration-300"
+              className="absolute bottom-0 right-1/2 transform translate-x-1/2 translate-y-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-full cursor-pointer transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
