@@ -238,24 +238,28 @@ const Portfolio = () => {
               title="Programming & Tools"
               skills={portfolioData.skills.programming}
               color="purple"
+              index={0}
             />
             <SkillCard 
               icon={<Database className="w-8 h-8" />}
               title="Data Science"
               skills={portfolioData.skills.dataScience}
               color="pink"
+              index={1}
             />
             <SkillCard 
               icon={<Cloud className="w-8 h-8" />}
               title="DevOps & Cloud"
               skills={portfolioData.skills.devops}
               color="blue"
+              index={2}
             />
             <SkillCard 
               icon={<Brain className="w-8 h-8" />}
               title="GenAI & LLMs"
               skills={portfolioData.skills.genAI}
               color="green"
+              index={3}
             />
           </div>
         </div>
