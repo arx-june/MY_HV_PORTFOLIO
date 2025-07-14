@@ -164,7 +164,7 @@ const Portfolio = () => {
           </motion.div>
           
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -173,7 +173,7 @@ const Portfolio = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-2xl md:text-3xl mb-8 text-purple-300 font-light"
+            className="text-2xl md:text-3xl mb-8 text-teal-300 font-light"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
