@@ -386,12 +386,15 @@ const SkillCard = ({ icon, title, skills, color, index }) => {
     triggerOnce: true,
     threshold: 0.1,
   });
+  
+  const [isExpanded, setIsExpanded] = useState(false);
+  const skillsToShow = isExpanded ? skills : skills.slice(0, 6);
 
   const colorClasses = {
-    purple: 'from-purple-600 to-purple-800',
-    pink: 'from-pink-600 to-pink-800',
+    teal: 'from-teal-600 to-teal-800',
+    cyan: 'from-cyan-600 to-cyan-800',
     blue: 'from-blue-600 to-blue-800',
-    green: 'from-green-600 to-green-800'
+    emerald: 'from-emerald-600 to-emerald-800'
   };
 
   return (
@@ -410,29 +413,32 @@ const SkillCard = ({ icon, title, skills, color, index }) => {
         >
           {icon}
         </motion.div>
-        <h3 className="text-xl font-bold">{title}</h3>
+        <h3 className="text-xl font-bold text-white">{title}</h3>
       </div>
       <div className="space-y-2">
-        {skills.slice(0, 6).map((skill, skillIndex) => (
+        {skillsToShow.map((skill, skillIndex) => (
           <motion.div 
             key={skillIndex}
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.4, delay: (index * 0.1) + (skillIndex * 0.05) }}
-            className="bg-white/10 px-3 py-1 rounded-full text-sm"
+            className="bg-white/10 px-3 py-1 rounded-full text-sm text-white"
           >
             {skill}
           </motion.div>
         ))}
         {skills.length > 6 && (
-          <motion.div 
-            className="text-sm text-gray-300"
+          <motion.button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-sm text-gray-200 hover:text-white transition-colors duration-200 underline"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.4, delay: (index * 0.1) + 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            +{skills.length - 6} more
-          </motion.div>
+            {isExpanded ? `Show less` : `+${skills.length - 6} more`}
+          </motion.button>
         )}
       </div>
     </motion.div>
