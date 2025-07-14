@@ -298,7 +298,7 @@ const Portfolio = () => {
       {/* Publications Section */}
       <section className="py-20 px-4 bg-black/20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
             Publications
           </h2>
           
