@@ -362,16 +362,16 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-black/40 border-t border-purple-500/20">
+      <footer className="py-12 px-4 bg-black/40 border-t border-teal-500/20">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400 mb-4">
             © 2025 {portfolioData.personalInfo.name}. All rights reserved.
           </p>
           <div className="flex justify-center gap-6">
-            <a href={`mailto:${portfolioData.personalInfo.email}`} className="text-purple-400 hover:text-purple-300 transition-colors">
+            <a href={`mailto:${portfolioData.personalInfo.email}`} className="text-teal-400 hover:text-teal-300 transition-colors">
               <Mail className="w-6 h-6" />
             </a>
-            <a href={portfolioData.personalInfo.github} className="text-purple-400 hover:text-purple-300 transition-colors">
+            <a href={portfolioData.personalInfo.github} className="text-teal-400 hover:text-teal-300 transition-colors">
               <Github className="w-6 h-6" />
             </a>
           </div>
