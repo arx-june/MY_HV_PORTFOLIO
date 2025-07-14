@@ -377,7 +377,12 @@ const Portfolio = () => {
   );
 };
 
-const SkillCard = ({ icon, title, skills, color }) => {
+const SkillCard = ({ icon, title, skills, color, index }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const colorClasses = {
     purple: 'from-purple-600 to-purple-800',
     pink: 'from-pink-600 to-pink-800',
@@ -386,22 +391,47 @@ const SkillCard = ({ icon, title, skills, color }) => {
   };
 
   return (
-    <div className={`bg-gradient-to-br ${colorClasses[color]} p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105`}>
+    <motion.div 
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className={`bg-gradient-to-br ${colorClasses[color]} p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300`}
+      whileHover={{ scale: 1.05, y: -5 }}
+    >
       <div className="flex items-center gap-3 mb-4">
-        {icon}
+        <motion.div
+          animate={{ rotate: [0, 10, -10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {icon}
+        </motion.div>
         <h3 className="text-xl font-bold">{title}</h3>
       </div>
       <div className="space-y-2">
-        {skills.slice(0, 6).map((skill, index) => (
-          <div key={index} className="bg-white/10 px-3 py-1 rounded-full text-sm">
+        {skills.slice(0, 6).map((skill, skillIndex) => (
+          <motion.div 
+            key={skillIndex}
+            initial={{ opacity: 0, x: -20 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            transition={{ duration: 0.4, delay: (index * 0.1) + (skillIndex * 0.05) }}
+            className="bg-white/10 px-3 py-1 rounded-full text-sm"
+          >
             {skill}
-          </div>
+          </motion.div>
         ))}
         {skills.length > 6 && (
-          <div className="text-sm text-gray-300">+{skills.length - 6} more</div>
+          <motion.div 
+            className="text-sm text-gray-300"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.4, delay: (index * 0.1) + 0.4 }}
+          >
+            +{skills.length - 6} more
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
