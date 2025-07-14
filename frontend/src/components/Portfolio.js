@@ -204,7 +204,7 @@ const Portfolio = () => {
               <motion.a 
                 key={index}
                 href={item.href}
-                className="flex items-center gap-2 bg-purple-600/20 hover:bg-purple-600/40 px-6 py-3 rounded-full transition-all duration-300"
+                className="flex items-center gap-2 bg-teal-600/20 hover:bg-teal-600/40 px-6 py-3 rounded-full transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
