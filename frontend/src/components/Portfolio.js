@@ -340,7 +340,7 @@ const Portfolio = () => {
             </div>
             
             <div>
-              <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
                 Certifications
               </h2>
               <div className="space-y-4">
