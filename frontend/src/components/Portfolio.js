@@ -52,28 +52,42 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-lg z-50 border-b border-purple-500/20">
+      <motion.nav 
+        className="fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-lg z-50 border-b border-purple-500/20"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-2xl bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <motion.div 
+              className="font-bold text-2xl bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               HV
-            </div>
+            </motion.div>
             <div className="hidden md:flex space-x-8">
-              {['Home', 'About', 'Skills', 'Experience', 'Projects', 'Publications', 'Contact'].map((item) => (
-                <button
+              {['Home', 'About', 'Skills', 'Experience', 'Projects', 'Publications', 'Contact'].map((item, index) => (
+                <motion.button
                   key={item}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
                   onClick={() => setActiveSection(item.toLowerCase())}
                   className={`px-3 py-2 rounded-lg transition-all duration-300 hover:bg-purple-600/20 ${
                     activeSection === item.toLowerCase() ? 'bg-purple-600/30 text-purple-300' : 'text-gray-300'
                   }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {item}
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative px-4 pt-16">
