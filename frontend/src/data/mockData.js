@@ -1,55 +1,55 @@
 export const portfolioData = {
   personalInfo: {
     name: "V Harsha Vardhan",
-    title: "Data Science Enthusiast",
-    location: "Chennai, Tamil Nadu, India 600087",
+    title: "Data Science Enthusiast & AI Developer",
+    location: "Chennai, Tamil Nadu, India",
     email: "harishvenkat2004@gmail.com",
     phone: "+91 8098242708",
     github: "https://github.com/H234Arsh",
-    summary: "Detail-oriented undergraduate and data science enthusiast with a strong grasp of Explainable AI and deep learning methodologies. Deeply committed to solving real-world problems through data-driven solutions and persistent learning. Experienced in developing and deploying machine learning models with a focus on operational efficiency.",
+    summary: "Welcome to my digital space! I'm a passionate data scientist with expertise in Explainable AI and deep learning. I solve real-world problems through data-driven solutions and build intelligent systems that make a difference.",
     profileImage: "/api/placeholder/400/400" // This will be replaced with actual image
   },
   
   education: [
     {
       institution: "Amrita Vishwa Vidyapeetham",
-      degree: "Bachelor of Technology in Computer and Communications Engineering",
-      cgpa: "8.79/10.0",
+      degree: "B.Tech in Computer & Communications Engineering",
+      cgpa: "CGPA: 8.79/10.0",
       location: "Chennai, India",
-      duration: "Oct 2022 – May 2026"
+      duration: "2022 – 2026"
     },
     {
       institution: "Prasan Vidya Mandir",
-      degree: "Higher Secondary School Examination",
+      degree: "Higher Secondary Education",
       percentage: "91.8%",
       location: "Chengalpattu, India",
-      duration: "May 2021"
+      duration: "2021"
     },
     {
       institution: "Prasan Vidya Mandir",
-      degree: "Secondary School Examination",
+      degree: "Secondary Education",
       percentage: "90.4%",
       location: "Chengalpattu, India",
-      duration: "Mar 2019"
+      duration: "2019"
     }
   ],
   
   skills: {
     programming: [
-      "C", "MATLAB", "Java", "Python", "SQL", "Bash", "Scikit-learn", "TensorFlow", 
-      "PyTorch", "Statsmodels", "SciPy", "Vaex", "Researchpy", "Pandas", "NumPy", 
-      "Matplotlib", "Plotly", "Tableau", "PowerBI", "MS Excel", "MySQL", "SHAP", 
-      "LIME", "ELI5", "Flask", "FastAPI", "Gradio", "GitHub", "GitLab"
+      "Python", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", 
+      "MATLAB", "SQL", "FastAPI", "Flask", "Java", "C", "Bash", "MySQL", 
+      "Statsmodels", "SciPy", "Vaex", "Matplotlib", "Plotly", "Tableau", 
+      "PowerBI", "SHAP", "LIME", "ELI5", "Gradio", "GitHub", "GitLab", "MS Excel"
     ],
     dataScience: [
-      "Explainable AI", "Deep Learning", "Predictive Modeling", "Time Series Analysis", 
-      "Statistical Modeling", "Data Visualization", "Machine Learning", "Data Analysis", 
-      "Data Interpretation", "Data Storytelling", "Feature Engineering", "Feature Selection", 
-      "Model Tuning", "Model Performance Testing", "Continuous Model Improvement", 
-      "Dashboard Development", "Predictive Analytics", "Data Services", "KPI Visualization"
+      "Explainable AI", "Deep Learning", "Machine Learning", "Predictive Modeling", 
+      "Time Series Analysis", "Statistical Modeling", "Data Visualization", 
+      "Feature Engineering", "Model Tuning", "Data Analysis", "Data Storytelling", 
+      "Dashboard Development", "Predictive Analytics", "KPI Visualization", 
+      "Model Performance Testing", "Continuous Model Improvement"
     ],
     devops: [
-      "Docker", "Kubernetes", "Terraform", "Google Cloud Platform (GCP—Student Tier)"
+      "Docker", "Kubernetes", "Terraform", "Google Cloud Platform (GCP)"
     ],
     genAI: [
       "Amazon Polly", "LangChain", "Gemini API", "Microsoft Phi-3", "FlanT5 XL", "AI Prompting"
@@ -58,14 +58,14 @@ export const portfolioData = {
   
   workExperience: [
     {
-      company: "Center for Development of Advanced Computing (C-DAC)",
-      position: "Web Scraping and LLM Intern",
-      location: "Tidel Park, Chennai",
+      company: "C-DAC (Center for Development of Advanced Computing)",
+      position: "Web Scraping & LLM Intern",
+      location: "Chennai",
       duration: "Dec 2024 – Jan 2025",
       responsibilities: [
-        "Geological Data Extraction: Employed Playwright and Scrapy to extract geological data from various Indian sources. Implemented SERP-API to gather pertinent links and extract data from websites.",
-        "QA System Development: Developed an automated question-answering system leveraging NVIDIA's Microsoft Phi-3, significantly enhancing response efficiency and accuracy by 35%.",
-        "Collaboration & Innovation: Led team collaboration and innovation initiatives, including ideation and model validation using evaluation metrics, while ensuring compliance with operational objectives and alignment with business goals."
+        "Built geological data extraction system using Playwright and Scrapy with SERP-API integration",
+        "Developed automated QA system with Microsoft Phi-3, improving response efficiency by 35%",
+        "Led team collaboration and model validation using evaluation metrics"
       ]
     },
     {
@@ -74,9 +74,9 @@ export const portfolioData = {
       location: "Remote",
       duration: "May 2024 – Jul 2024",
       responsibilities: [
-        "Python Application Development: Acquired Python programming skills and created a Flask-based application for predicting healthcare insurance costs.",
-        "Market Segmentation Analysis: Performed an in-depth market segmentation analysis to optimize predictive modeling accuracy.",
-        "Real Estate Price Prediction: Engineered an end-to-end website for real estate price estimation in Bengaluru using data-driven machine learning techniques."
+        "Created Flask-based healthcare insurance cost prediction application",
+        "Performed market segmentation analysis to optimize predictive modeling accuracy",
+        "Engineered end-to-end real estate price prediction website for Bengaluru market"
       ]
     }
   ],
@@ -85,32 +85,26 @@ export const portfolioData = {
     {
       title: "XAI for Healthcare: Pes-planus Disease Classification",
       duration: "Apr 2025 – Jun 2025",
-      description: "Developed a hybrid classifier using LBP and CNN embeddings (InceptionV3, Xception) achieving 98.56% accuracy. Enhanced explainability via SHAP pixel-level insights, deployed as a Flask API in Docker for scalable inference.",
+      description: "Hybrid classifier using LBP and CNN embeddings (InceptionV3, Xception) with 98.56% accuracy. Enhanced explainability via SHAP pixel-level insights, deployed as Flask API in Docker.",
       technologies: ["Python", "TensorFlow", "SHAP", "Docker", "Flask"]
     },
     {
       title: "NEWCAST AI: AI Newspaper OCR with Military TTS",
       duration: "Mar 2025",
-      description: "Engineered an OCR + neural TTS pipeline using OpenCV and Google Gemini 1.5 Flash. Integrated Amazon Polly for military-style voice synthesis and deployed with a lightweight Flask backend.",
+      description: "OCR + neural TTS pipeline using OpenCV and Google Gemini 1.5 Flash. Integrated Amazon Polly for military-style voice synthesis with Flask backend.",
       technologies: ["OpenCV", "Google Gemini", "Amazon Polly", "Flask"]
     },
     {
-      title: "HealthSightAI: Mobile Medical Image Analysis App",
+      title: "HealthSightAI: Mobile Medical Image Analysis",
       duration: "Feb 2025",
-      description: "Built an Android app with TensorFlow Lite for offline real-time fracture and foot disorder detection. Trained models via Teachable Machine and delivered immediate diagnostics through image capture/upload.",
+      description: "Android app with TensorFlow Lite for offline real-time fracture and foot disorder detection. Trained models via Teachable Machine for immediate diagnostics.",
       technologies: ["Android", "TensorFlow Lite", "Teachable Machine"]
     },
     {
       title: "Lumpy Skin Disease Classifier",
       duration: "Dec 2023 – Mar 2024",
-      description: "Constructed deep learning ensembles (InceptionV3, Xception + RF at 95.6%; DenseNet121 + SVM at 93.2%). Performed extensive preprocessing, augmentation, tuning, and delivered a Gradio UI deployed on Colab Pro.",
-      technologies: ["Deep Learning", "InceptionV3", "Xception", "DenseNet121", "Gradio"]
-    },
-    {
-      title: "Sea Weather Buoy RTOS Monitoring System",
-      duration: "Dec 2023 – Mar 2024",
-      description: "Developed an Arduino + FreeRTOS prototype to collect wave height, temperature, humidity, turbidity, and pH data. Implemented RTOS queue scheduling and real-time alerts for effective task prioritization.",
-      technologies: ["Arduino", "FreeRTOS", "IoT", "Real-time Systems"]
+      description: "Deep learning ensembles (InceptionV3, Xception + RF at 95.6%). Extensive preprocessing, augmentation, tuning with Gradio UI deployed on Colab Pro.",
+      technologies: ["Deep Learning", "InceptionV3", "Xception", "Gradio"]
     }
   ],
   
@@ -119,22 +113,20 @@ export const portfolioData = {
       title: "Mel Spectrogram-Based Fish Feeding Intensity Classification",
       conference: "ICCCNT Conference, IIT Indore",
       date: "July 2025",
-      description: "Achieved 98.3% test accuracy using Xception with RMSProp on Mel spectrograms across 4 audio classes, outperforming MFCC-based baselines by 11%. Engineered a lightweight DL model with under 2.5M parameters, delivering real-time inference (<50ms) on Raspberry Pi 4."
+      description: "Achieved 98.3% accuracy using Xception with RMSProp. Engineered lightweight DL model with <2.5M parameters, delivering real-time inference (<50ms) on Raspberry Pi 4."
     },
     {
       title: "Wearable Plantar Pressure Monitoring System",
       conference: "WiSPNET Conference, SSNCE",
       date: "March 2025",
-      description: "Developed an IoT-based foot pressure monitoring system using Arduino MKR Zero and piezoelectric sensors (zones A0–A3). Enabled BLE-based real-time wireless transmission and MATLAB-based 30×30 dynamic heatmap generation with a 1s response."
+      description: "IoT-based foot pressure monitoring using Arduino MKR Zero and piezoelectric sensors. BLE-based transmission with MATLAB 30×30 dynamic heatmap generation."
     }
   ],
   
   certifications: [
-    { name: "Cisco Python 1 and 2 Essentials", issuer: "Cisco" },
+    { name: "Cisco Python Essentials", issuer: "Cisco" },
     { name: "Cisco Cybersecurity Essentials", issuer: "Cisco" },
-    { name: "Cisco ITN, SRWE, ENSA", issuer: "Cisco" },
-    { name: "Analyze Data with Power BI", issuer: "Microsoft" },
-    { name: "Software Conceptual Design", issuer: "Various" },
+    { name: "Power BI Data Analysis", issuer: "Microsoft" },
     { name: "Python for Data Science", issuer: "IBM" },
     { name: "Advanced SQL", issuer: "Various" }
   ],
@@ -142,9 +134,9 @@ export const portfolioData = {
   awards: [
     {
       name: "Dream Student Award",
-      issuer: "Dr. Abdul Kalam Trust for Educational & Greenery",
+      issuer: "Dr. Abdul Kalam Trust",
       date: "Oct 2019",
-      description: "Awarded for exceptional academic performance and active participation in extracurricular activities."
+      description: "Exceptional academic performance and extracurricular participation"
     }
   ]
 };
