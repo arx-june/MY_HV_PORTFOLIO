@@ -550,18 +550,32 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
-const PublicationCard = ({ publication }) => (
-  <div className="bg-purple-900/20 p-8 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
-    <div className="flex items-start gap-4">
-      <Book className="w-6 h-6 text-purple-400 mt-1" />
-      <div className="flex-1">
-        <h3 className="text-2xl font-bold text-purple-300 mb-2">{publication.title}</h3>
-        <p className="text-lg text-white mb-2">{publication.conference}</p>
-        <p className="text-purple-400 mb-3">{publication.date}</p>
-        <p className="text-gray-300 leading-relaxed">{publication.description}</p>
+const PublicationCard = ({ publication, index }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div 
+      ref={ref}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="bg-teal-900/20 p-8 rounded-xl border border-teal-500/20 hover:border-teal-500/40 transition-all duration-300"
+      whileHover={{ scale: 1.02, y: -5 }}
+    >
+      <div className="flex items-start gap-4">
+        <Book className="w-6 h-6 text-teal-400 mt-1" />
+        <div className="flex-1">
+          <h3 className="text-2xl font-bold text-teal-300 mb-2">{publication.title}</h3>
+          <p className="text-lg text-white mb-2">{publication.conference}</p>
+          <p className="text-teal-400 mb-3">{publication.date}</p>
+          <p className="text-gray-300 leading-relaxed">{publication.description}</p>
+        </div>
       </div>
-    </div>
-  </div>
-);
+    </motion.div>
+  );
+};
 
 export default Portfolio;
