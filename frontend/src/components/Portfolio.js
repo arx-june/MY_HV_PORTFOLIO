@@ -93,7 +93,7 @@ const Portfolio = () => {
       <section className="min-h-screen flex items-center justify-center relative px-4 pt-16">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-600 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             animate={{ 
               scale: [1, 1.2, 1],
               rotate: [0, 180, 360],
@@ -108,7 +108,7 @@ const Portfolio = () => {
             style={{ y: y1 }}
           />
           <motion.div 
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-70"
             animate={{ 
               scale: [1.2, 1, 1.2],
               rotate: [360, 180, 0],
