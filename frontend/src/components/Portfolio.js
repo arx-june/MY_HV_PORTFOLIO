@@ -439,34 +439,78 @@ const SkillCard = ({ icon, title, skills, color, index }) => {
   );
 };
 
-const ExperienceCard = ({ experience }) => (
-  <div className="bg-purple-900/20 p-8 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-[1.02]">
-    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-      <div>
-        <h3 className="text-2xl font-bold text-purple-300 mb-2">{experience.position}</h3>
-        <p className="text-xl text-white mb-2">{experience.company}</p>
+const ExperienceCard = ({ experience, index }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div 
+      ref={ref}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="bg-purple-900/20 p-8 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
+      whileHover={{ scale: 1.02, y: -5 }}
+    >
+      <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+        <div>
+          <motion.h3 
+            className="text-2xl font-bold text-purple-300 mb-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: (index * 0.1) + 0.2 }}
+          >
+            {experience.position}
+          </motion.h3>
+          <motion.p 
+            className="text-xl text-white mb-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: (index * 0.1) + 0.3 }}
+          >
+            {experience.company}
+          </motion.p>
+        </div>
+        <div className="text-right">
+          <motion.div 
+            className="flex items-center gap-1 text-gray-400 mb-1"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: (index * 0.1) + 0.4 }}
+          >
+            <MapPin className="w-4 h-4" />
+            <span>{experience.location}</span>
+          </motion.div>
+          <motion.div 
+            className="flex items-center gap-1 text-gray-400"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: (index * 0.1) + 0.5 }}
+          >
+            <Calendar className="w-4 h-4" />
+            <span>{experience.duration}</span>
+          </motion.div>
+        </div>
       </div>
-      <div className="text-right">
-        <div className="flex items-center gap-1 text-gray-400 mb-1">
-          <MapPin className="w-4 h-4" />
-          <span>{experience.location}</span>
-        </div>
-        <div className="flex items-center gap-1 text-gray-400">
-          <Calendar className="w-4 h-4" />
-          <span>{experience.duration}</span>
-        </div>
+      <div className="space-y-3">
+        {experience.responsibilities.map((resp, respIndex) => (
+          <motion.div 
+            key={respIndex}
+            className="flex items-start gap-2"
+            initial={{ opacity: 0, x: -20 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            transition={{ duration: 0.4, delay: (index * 0.1) + (respIndex * 0.1) + 0.3 }}
+          >
+            <Zap className="w-4 h-4 text-purple-400 mt-1 flex-shrink-0" />
+            <p className="text-gray-300">{resp}</p>
+          </motion.div>
+        ))}
       </div>
-    </div>
-    <div className="space-y-3">
-      {experience.responsibilities.map((resp, index) => (
-        <div key={index} className="flex items-start gap-2">
-          <Zap className="w-4 h-4 text-purple-400 mt-1 flex-shrink-0" />
-          <p className="text-gray-300">{resp}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+    </motion.div>
+  );
+};
 
 const ProjectCard = ({ project }) => (
   <div className="bg-purple-900/20 p-6 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105">
