@@ -518,23 +518,37 @@ const ExperienceCard = ({ experience, index }) => {
   );
 };
 
-const ProjectCard = ({ project }) => (
-  <div className="bg-purple-900/20 p-6 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105">
-    <div className="flex items-start justify-between mb-4">
-      <h3 className="text-xl font-bold text-purple-300">{project.title}</h3>
-      <ExternalLink className="w-5 h-5 text-gray-400 hover:text-purple-400 cursor-pointer" />
-    </div>
-    <p className="text-gray-400 mb-3 text-sm">{project.duration}</p>
-    <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
-    <div className="flex flex-wrap gap-2">
-      {project.technologies.map((tech, index) => (
-        <span key={index} className="bg-purple-600/20 text-purple-300 px-2 py-1 rounded-full text-xs">
-          {tech}
-        </span>
-      ))}
-    </div>
-  </div>
-);
+const ProjectCard = ({ project, index }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div 
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="bg-teal-900/20 p-6 rounded-xl border border-teal-500/20 hover:border-teal-500/40 transition-all duration-300"
+      whileHover={{ scale: 1.05, y: -5 }}
+    >
+      <div className="flex items-start justify-between mb-4">
+        <h3 className="text-xl font-bold text-teal-300">{project.title}</h3>
+        <ExternalLink className="w-5 h-5 text-gray-400 hover:text-teal-400 cursor-pointer transition-colors" />
+      </div>
+      <p className="text-gray-400 mb-3 text-sm">{project.duration}</p>
+      <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+      <div className="flex flex-wrap gap-2">
+        {project.technologies.map((tech, techIndex) => (
+          <span key={techIndex} className="bg-teal-600/20 text-teal-300 px-2 py-1 rounded-full text-xs">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
 
 const PublicationCard = ({ publication }) => (
   <div className="bg-purple-900/20 p-8 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
