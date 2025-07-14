@@ -457,13 +457,13 @@ const ExperienceCard = ({ experience, index }) => {
       initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-purple-900/20 p-8 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
+      className="bg-teal-900/20 p-8 rounded-xl border border-teal-500/20 hover:border-teal-500/40 transition-all duration-300"
       whileHover={{ scale: 1.02, y: -5 }}
     >
       <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
         <div>
           <motion.h3 
-            className="text-2xl font-bold text-purple-300 mb-2"
+            className="text-2xl font-bold text-teal-300 mb-2"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: (index * 0.1) + 0.2 }}
