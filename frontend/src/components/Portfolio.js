@@ -345,12 +345,12 @@ const Portfolio = () => {
               </h2>
               <div className="space-y-4">
                 {portfolioData.certifications.map((cert, index) => (
-                  <div key={index} className="bg-purple-900/20 p-4 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
+                  <div key={index} className="bg-teal-900/20 p-4 rounded-xl border border-teal-500/20 hover:border-teal-500/40 transition-all duration-300">
                     <div className="flex items-start gap-3">
-                      <Award className="w-5 h-5 text-purple-400 mt-1" />
+                      <Award className="w-5 h-5 text-teal-400 mt-1" />
                       <div>
                         <h3 className="font-semibold text-white">{cert.name}</h3>
-                        <p className="text-purple-400">{cert.issuer}</p>
+                        <p className="text-teal-400">{cert.issuer}</p>
                       </div>
                     </div>
                   </div>
